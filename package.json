@@ -12,6 +12,7 @@
     "test": "vue-cli-service test:unit && vue-cli-service test:e2e --headless"
   },
   "dependencies": {
+    "cordova-windows": "^7.0.0",
     "vue": "^2.6.10",
     "vue-class-component": "^7.0.2",
     "vue-property-decorator": "^8.2.2",
@@ -43,7 +44,8 @@
     },
     "platforms": [
       "electron",
-      "android"
+      "android",
+      "windows"
     ]
   }
 }
