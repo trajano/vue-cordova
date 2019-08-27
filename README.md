@@ -12,7 +12,7 @@ npm run serve
 
 ### Compiles and minifies for production
 ```
-npm run build
+npm run build && cordova 
 ```
 
 ### Run your tests
@@ -22,7 +22,7 @@ npm run test
 
 ### Lints and fixes files
 ```
-npm run lint
+npm run fmt
 ```
 
 ### Run your end-to-end tests
