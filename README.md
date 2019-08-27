@@ -2,6 +2,7 @@
 
 ## Project setup
 ```
+npm install -g cordova
 npm install
 ```
 
@@ -10,12 +11,18 @@ npm install
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Runs on Cordova device
 ```
-npm run build && cordova 
+cordova platform add <android|electron|ios>
+cordova run <android|electron|ios>
 ```
 
-### Run your tests
+### Creates Cordova release
+```
+cordova build <android|electron|ios> --release
+```
+
+### Run unit and E2E tests headless
 ```
 npm run test
 ```
@@ -34,6 +41,3 @@ npm run test:e2e
 ```
 npm run test:unit
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
