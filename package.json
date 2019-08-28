@@ -1,6 +1,6 @@
 {
   "name": "vue-cordova",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -9,7 +9,8 @@
     "fmt": "vue-cli-service lint --fix",
     "test:e2e": "vue-cli-service test:e2e",
     "test:unit": "vue-cli-service test:unit",
-    "test": "vue-cli-service test:unit && vue-cli-service test:e2e --headless"
+    "test": "vue-cli-service test:unit && vue-cli-service test:e2e --headless",
+    "version": "sync-cordova-xml package.json config.xml --output=config.xml && git add config.xml"
   },
   "dependencies": {
     "vue": "^2.6.10",
@@ -34,6 +35,7 @@
     "mem": "^4.3.0",
     "sass": "^1.22.10",
     "sass-loader": "^7.3.1",
+    "sync-cordova-xml": "^0.4.0",
     "typescript": "^3.4.3",
     "vue-template-compiler": "^2.6.10"
   },
