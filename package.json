@@ -13,6 +13,7 @@
     "version": "sync-cordova-xml package.json config.xml --output=config.xml && git add config.xml"
   },
   "dependencies": {
+    "oidc-client": "^1.9.1",
     "vue": "^2.6.10",
     "vue-class-component": "^7.0.2",
     "vue-property-decorator": "^8.3.0",
