@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
-
+import { userManager, isOidcCallback } from '@/oidc-helper';
 Vue.use(Router);
 
 export default new Router({
@@ -10,6 +10,13 @@ export default new Router({
       path: '/',
       name: 'home',
       component: Home,
+      beforeEnter: async (to, from, next) => {
+        if (isOidcCallback(window.location.href)) {
+          // it would be nice to have some animation here
+          await userManager.signinRedirectCallback(window.location.href);
+        }
+        next();
+      },
     },
     {
       path: '/about',
