@@ -8,3 +8,5 @@ indent_style = space
 [*.xml]
 indent_size = 4
 
+[*.json]
+insert_final_newline=true
