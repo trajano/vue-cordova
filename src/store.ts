@@ -11,6 +11,9 @@ export default new Vuex.Store({
     setUser(state, user) {
       state.user = user;
     },
+    unsetUser(state) {
+      state.user = null;
+    },
   },
   actions: {
 

@@ -1,8 +1,9 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <p v-if="isLoggedIn">
+    <p v-if="isLoggedIn()">
       Hello {{user()}}
+      <button @click="logout">Logout</button>
     </p>
     <p v-else>
       <button @click="loginWithGoogle">Login with Google</button>
@@ -84,8 +85,9 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue, Model, PropSync, Ref } from 'vue-property-decorator';
+import { Component, Prop, Vue } from 'vue-property-decorator';
 import { userManager } from '@/oidc-helper';
+import router from '@/router';
 
 @Component
 export default class HelloWorld extends Vue {
@@ -98,6 +100,9 @@ export default class HelloWorld extends Vue {
   }
   private user(): object {
     return this.$store.state.user;
+  }
+  private logout(): void {
+    userManager.removeUser();
   }
 
 }
