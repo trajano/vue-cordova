@@ -1,4 +1,10 @@
 module.exports = {
   outputDir: 'www',
-  publicPath: ''
+  publicPath: '',
+  configureWebpack: {
+    performance: {
+      maxEntrypointSize: 512000,
+      maxAssetSize: 512000 
+    }
+  }
 }

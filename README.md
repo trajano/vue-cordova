@@ -1,6 +1,9 @@
 # vue-cordova
 
 ## Project setup
+
+**note** E2E only works in Windows up to Node 10.x LTS.  [Github Issue](https://github.com/vuejs/vue-cli/issues/4799#issuecomment-553075732).
+
 ```
 npm install -g cordova
 npm install
