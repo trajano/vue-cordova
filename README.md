@@ -2,7 +2,7 @@
 
 ## Project setup
 
-**note** E2E only works in Windows up to Node 10.x LTS.  [Github Issue](https://github.com/vuejs/vue-cli/issues/4799#issuecomment-553075732).
+Tested on **node v12.13.1 LTS** on **Windows 10 Professional**.
 
 ```
 npm install -g cordova
