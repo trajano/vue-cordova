@@ -1,7 +1,7 @@
 FROM openjdk:8
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    gradle \
-    && rm -rf /var/lib/apt/lists/*
+# RUN apt-get update && apt-get install -y --no-install-recommends \
+#     gradle \
+#     && rm -rf /var/lib/apt/lists/*
 ENV ANDROID_SDK_ROOT="/usr/local/android-sdk" \
     SDK_URL="https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip" \
     NVM_DIR="/usr/local/nvm" \
@@ -14,15 +14,17 @@ RUN mkdir "$ANDROID_SDK_ROOT" .android "$NVM_DIR" \
     && yes | $ANDROID_SDK_ROOT/tools/bin/sdkmanager --licenses \
     && curl -so- ${NVM_URL} | bash
 # RUN $ANDROID_SDK_ROOT/tools/bin/sdkmanager --update
-ENV ANDROID_VERSION=28 \
-    ANDROID_BUILD_TOOLS_VERSION=28.0.3
+ENV ANDROID_VERSION=29 \
+    ANDROID_BUILD_TOOLS_VERSION=29.0.3
 RUN $ANDROID_SDK_ROOT/tools/bin/sdkmanager "build-tools;${ANDROID_BUILD_TOOLS_VERSION}" \
     "platforms;android-${ANDROID_VERSION}" \
     "platform-tools"
-COPY package*.json config.xml .nvmrc /src/
+COPY .nvmrc /src/
 WORKDIR /src
 RUN bash $NVM_DIR/nvm.sh --install \
-    && . $NVM_DIR/nvm.sh \
+    && . $NVM_DIR/nvm.sh
+COPY package*.json config.xml /src/
+RUN . $NVM_DIR/nvm.sh \
     && nvm use \
     && npm ci \
     && mkdir www \
