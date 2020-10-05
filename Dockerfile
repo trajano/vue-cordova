@@ -1,7 +1,4 @@
-FROM openjdk:8
-# RUN apt-get update && apt-get install -y --no-install-recommends \
-#     gradle \
-#     && rm -rf /var/lib/apt/lists/*
+FROM gradle:jdk8
 ENV ANDROID_SDK_ROOT="/usr/local/android-sdk" \
     SDK_URL="https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip" \
     NVM_DIR="/usr/local/nvm" \
