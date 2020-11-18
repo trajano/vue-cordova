@@ -1,4 +1,4 @@
-/* eslint-disable arrow-body-style */
+/* eslint-disable arrow-body-style, @typescript-eslint/no-var-requires */
 // https://docs.cypress.io/guides/guides/plugins-guide.html
 
 // if you need a custom webpack configuration you can uncomment the following import
@@ -10,6 +10,7 @@
 // const webpack = require('@cypress/webpack-preprocessor')
 
 module.exports = (on, config) => {
+  require("@cypress/code-coverage/task")(on, config);
   // on('file:preprocessor', webpack({
   //  webpackOptions: require('@vue/cli-service/webpack.config'),
   //  watchOptions: {}
