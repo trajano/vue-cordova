@@ -3,7 +3,7 @@
 ## Project setup
 
 Tested on **node v12.13.1 LTS** on **Windows 10 Professional**.
-Tested on **node v15.2.0** on **macOS Big Sur**.
+Tested on **node v14.15.1** on **macOS Big Sur**.
 
 ```
 npm install
@@ -19,6 +19,10 @@ npm run serve
 sdkmanager "build-tools;28.0.3" "platforms;android-28" "platform-tools"
 ```
 
+### Run on Electron
+```
+npx cordova run elecron --release
+```
 ### Runs on Cordova device
 ```
 npx cordova platform add <android|electron|ios>
