@@ -25,8 +25,8 @@ RUN . $NVM_DIR/nvm.sh \
     && nvm use \
     && npm ci \
     && mkdir www \
-    && npx cordova prepare
+    && npx cordova prepare android
 COPY . /src/
 RUN . $NVM_DIR/nvm.sh \
     && nvm use \
-    && npx cordova build
+    && npx cordova build android --device

@@ -26,3 +26,5 @@ yarn-error.log*
 /platforms
 /plugins
 .gradle
+.nyc_output
+coverage/

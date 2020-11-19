@@ -3,9 +3,9 @@
 ## Project setup
 
 Tested on **node v12.13.1 LTS** on **Windows 10 Professional**.
+Tested on **node v14.15.1** on **macOS Big Sur**.
 
 ```
-npm install -g cordova
 npm install
 ```
 
@@ -19,16 +19,20 @@ npm run serve
 sdkmanager "build-tools;28.0.3" "platforms;android-28" "platform-tools"
 ```
 
+### Run on Electron
+```
+npx cordova run electron --release
+```
 ### Runs on Cordova device
 ```
-cordova platform add <android|electron|ios>
-cordova build <android|electron|ios>
-cordova run <android|electron|ios>
+npx cordova platform add <android|electron|ios>
+npx cordova build <android|electron|ios>
+npx cordova run <android|electron|ios>
 ```
 
 ### Creates Cordova release
 ```
-cordova build <android|electron|ios> --release
+npx cordova build <android|electron|ios> --release
 ```
 
 ### Run unit and E2E tests headless
